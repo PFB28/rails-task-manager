@@ -1,0 +1,21 @@
+<div class="container">
+  <h1><%= @task.title %></h1>
+  <div class="card">
+    <p><%= @task.details %></p>
+  </div>
+  <div>
+    <p>This task is <%=@task.completed ? "completed" : "not completed" %>.</p>
+  </div>
+  <div>
+  <%= link_to 'edit', edit_task_path(@task) %>
+  </div>
+  <div>
+  <%= link_to 'delete',
+              task_path(@task),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+  </div>
+  <div>
+    <%= link_to 'Back to tasks', tasks_path %>
+  </div>
+</div>
